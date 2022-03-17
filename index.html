@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+ <input type="text"class="color-field">
+ <button class="switcher">switch</button></div>  
+ <script>
+     (function(){
+         const colorField=document.querySelector(".color-field")
+         const switcher=document.querySelector(".switcher")
+         function newColor(){
+             let red=Math.floor(Math.random()*256)
+             let green=Math.floor(Math.random()*256)
+             let blue=Math.floor(Math.random()*256)
+             return `rgb(${red},${green},${blue}) `
+         }
+         switcher.addEventListener("click",function(){
+             let color=newColor()
+             document.body.style.background=color
+             colorField.value=color;
+         })
+     })()
+ </script>
+</body>
+</html>
